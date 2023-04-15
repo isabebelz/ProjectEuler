@@ -6,7 +6,7 @@ public class LargestPalindromeProduct {
         for(int i = 100; i < 1000; i++) {
             for (int j = 100; j < 1000; j++) {
                 p = i * j;
-                if (palindromic(p)) {
+                if (palindromic(String.valueOf(p))) {
                     largest = p;
                 }
             }
@@ -15,9 +15,9 @@ public class LargestPalindromeProduct {
         System.out.println(largest);
 
     }
-    private static boolean palindromic(int p) {
+    private static boolean palindromic(String p) {
         for(int i = 0; i < p.length(); i++) {
-            for(int j = p.length(); j <= 0; j--) {
+            for(int j = p.length() - 1; j > 0; j--) {
                 if(p.charAt(i) == p.charAt(j)) {
                     return true;
                 }
