@@ -3,8 +3,8 @@ public class LargestPalindromeProduct {
 
         int largest = 0, p;
 
-        for(int i = 1; i < 20; i++) {
-            for (int j = 1; j < 20; j++) {
+        for(int i = 1; i < 1000; i++) {
+            for (int j = 1; j < 1000; j++) {
                 p = i * j;
                 if (palindromic(String.valueOf(p))) {
                     largest = p;
@@ -16,12 +16,11 @@ public class LargestPalindromeProduct {
 
     }
     private static boolean palindromic(String p) {
-        for(int i = 0; i < p.length(); i++) {
-            int j = p.length();
-            if(p.charAt(i) == p.charAt(j - 1)) {
-                j--;
+        for(int i = 0, j = p.length() - 1; i < p.length(); i++, j--) {
+            if(p.charAt(i) == p.charAt(j)) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }
